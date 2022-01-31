@@ -25,16 +25,17 @@ if option == 'My webcam':
                 st.write('Sketched photo')
                 st.image(sketch(photo))
 
-            cv.imwrite("sketched_photo.png", sketch(photo))
+            cv.imwrite("photos/sketched_photo.png", sketch(photo))
 
-            with open("sketched_photo.png", "rb") as file:
+            with open("photos/sketched_photo.png", "rb") as file:
                 btn = st.download_button(
                     label="Download the sketch!",
                     data=file,
                     file_name="sketched_photo.png",
                     mime="image/png"
                 )
-
+            clean_folder('photos')
+            st.write("Your photos aren't being saved anywhere!")
 
 if option == 'Upload a photo':
 
@@ -52,12 +53,14 @@ if option == 'Upload a photo':
             st.write('Sketched photo')
             st.image(sketch(uploaded_file))
 
-        cv.imwrite("sketched_photo.png", sketch(uploaded_file))
+        cv.imwrite("photos/sketched_photo.png", sketch(uploaded_file))
 
-        with open("sketched_photo.png", "rb") as file:
+        with open("photos/sketched_photo.png", "rb") as file:
             btn = st.download_button(
                 label="Download the sketch!",
                 data=file,
                 file_name="sketched_photo.png",
                 mime="image/png"
             )
+        clean_folder('photos')
+        st.write("Your photos aren't being saved anywhere!")
