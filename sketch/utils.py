@@ -22,11 +22,6 @@ def sketch(image):
     ret, mask = cv.threshold(canny_edges, 70, 255, cv.THRESH_BINARY_INV)
     return mask
 
-def show_pic(img):
-    cv.imshow('Image', img)
-    cv.waitKey(0)
-
-    cv.destroyAllWindows()
 
 
 def clean_folder(folder):
