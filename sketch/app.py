@@ -1,6 +1,6 @@
 
 import streamlit as st
-from utils import *
+from utils import sketch,clean_folder
 import numpy as np
 
 
