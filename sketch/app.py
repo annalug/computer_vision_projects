@@ -2,6 +2,8 @@
 import streamlit as st
 from utils import sketch,clean_folder
 import numpy as np
+from PIL import Image
+import cv2 as cv
 
 
 st.title('How would you like to make a sketch?')
